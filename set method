@@ -1,0 +1,47 @@
+
+#include <iostream>
+#include<set>
+using namespace std;
+void print(set<int> d)
+{
+    for(auto s:d)
+    {
+        cout<<s<<" ";;
+    }
+    cout<<'\n';
+}
+void reverse_print(set<int> d)
+{
+    set<int>::reverse_iterator q;
+    for(q=d.rbegin(); q!=d.rend(); q++)
+    {
+        cout<<*q<<' ';
+    }
+    cout<<'\n';
+}
+int main() {
+    set<int> as;
+    //insert method
+    as.insert(2);
+    as.insert(3);
+    as.insert(4);
+    as.insert(9);
+    as.insert(8);
+    print(as);
+    as.erase(4);
+    print(as);
+    reverse_print(as);
+    //find method
+    auto r=as.find(3);
+    for(auto e=r; e!=as.end(); e++)
+    {
+        cout<<*e<<' ';
+    }
+    cout<<'\n';
+    //lower bound method
+    cout<<*(as.lower_bound(3));
+    cout<<'\n';
+    //upper bound method
+    cout<<*(as.upper_bound(5))<<endl;
+    return 0;
+}

@@ -8,5 +8,5 @@ int main()
 	b1.addbranch("we",43);
 	b2.addbranch("e",23);
 	b3.addbranch("weqq",23);
-	b1.allbranch();
+	
 }
